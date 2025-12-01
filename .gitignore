@@ -1,0 +1,24 @@
+Ignore the virtual environment (Libraries)
+
+venv/
+.env
+
+Ignore Python cache files
+
+pycache/
+*.pyc
+
+Ignore large generated data folders (Users should run generate scripts instead)
+
+demo_files/
+demo_large/
+demo_mobilenet/
+demo_mnist/
+demo_resnet/
+demo_tabular/
+inputs/
+outputs/
+
+Ignore OS specific files
+
+.DS_Store

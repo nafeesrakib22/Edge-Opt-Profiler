@@ -1,0 +1,5 @@
+tensorflow==2.15.0
+numpy<2.0
+pandas
+streamlit
+tensorflow-model-optimization==0.7.5

@@ -50,10 +50,13 @@ def run_optimization():
     
     # 2. Handle Optional Data
     X_val, y_val = None, None
-    if uploaded_data_x and uploaded_data_y:
-        X_val = np.load(uploaded_data_x)
-        y_val = np.load(uploaded_data_y)
-        st.success(f"✅ Loaded Validation Data: {X_val.shape}")
+    if uploaded_data_x is not None and uploaded_data_y is not None:
+        try:
+            X_val = np.load(uploaded_data_x)
+            y_val = np.load(uploaded_data_y)
+            st.success(f"✅ Loaded Validation Data: {X_val.shape} samples")
+        except Exception as e:
+            st.error(f"❌ Error loading .npy files: {e}")
 
     # 3. Initialize Engines
     loader = TensorFlowLoader()
@@ -63,6 +66,7 @@ def run_optimization():
     # 4. Run Pipeline
     with st.spinner("⚙️ Optimizing Model (Baseline, Quantization, Pruning)..."):
         # This calls your code from Day 2/3!
+        # Explicitly passing X_val and y_val to ensure pruning triggers
         model_paths = loader.process_pipeline(temp_path, X_val, y_val)
     
     # 5. Profile & Evaluate
@@ -131,7 +135,7 @@ if st.session_state.results_df is not None:
     # Highlight the winner in the table
     st.dataframe(
         ranked_df.style.highlight_min(subset=['final_score'], color='#d4edda', axis=0),
-        use_container_width=True
+        width=1000
     )
     
     # --- VISUALIZATION ---

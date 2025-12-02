@@ -2,15 +2,6 @@
 
 **EdgeOpt** is a decision-support tool designed for Machine Learning Engineers deploying models to resource-constrained edge devices (IoT, Mobile, Embedded). It automatically profiles deep learning models, applies industry-standard optimization techniques, and ranks the results based on user-defined priorities for **Accuracy**, **Latency**, and **Size**.
 
-<p align="center">
-  <br>
-  <img src="assets/EdgeOpt Demo.gif" alt="EdgeOpt Tool Demo" width="800">
-  <br>
-  <em>Real-time optimization of MobileNetV2 showing upto 4x size reduction with minimal accuracy loss accross the chosen optimization techniques.</em>
-  <br>
-</p>
-
-
 ## 🚀 Key Features
 
 * **Universal Ingestion:** Seamlessly handles `.h5` (Keras) and `.zip` (TensorFlow SavedModel) formats.
@@ -70,15 +61,15 @@ You can use your own model or generate a demo model using the included scripts:
 
 **NOTE:** The repository comes with a pre-generated `demo_mobilenet` folder containing a trained model and validation data, so you can test the tool immediately without running any generation scripts!
 
-
 ### 2. In the App
-1.  **Upload Model:** Select the `.h5` file from the sidebar.
-2.  **Upload Data (Crucial):** Upload `X_val.npy` and `y_val.npy`.
+1.  **Upload Model:** Select the `.h5` file from the sidebar (e.g., `demo_mobilenet/mobilenet_cifar.h5`).
+2.  **Upload Data (Crucial):** Upload `X_val.npy` and `y_val.npy` (e.g., from `demo_mobilenet/`).
     * *Note: Providing data unlocks the **Pruning** optimizer and **Real Accuracy** measurement.*
 3.  **Run Optimization:** Click the **🚀 Start Optimization Process** button.
 4.  **Analyze Results:**
     * The tool will generate a table of results (`Baseline`, `Dynamic`, `FP16`, `Pruning`).
     * Use the **Alpha (Size)**, **Beta (Accuracy)**, and **Gamma (Speed)** sliders to change the recommendation logic.
+    * **📂 Retrieve Models:** All optimized `.tflite` files are automatically saved in the `outputs/` folder in your project directory.
 
 ## 📂 Project Structure
 
@@ -94,6 +85,8 @@ You can use your own model or generate a demo model using the included scripts:
 │
 ├── app.py              # Streamlit Interactive Dashboard
 ├── requirements.txt    # Dependency lockfile
+├── inputs/             # Temporary storage for uploaded files
+├── outputs/            # DESTINATION for all optimized .tflite models
 └── generate_*.py       # Scripts to create real-world test cases
 ```
 
@@ -110,7 +103,7 @@ You can use your own model or generate a demo model using the included scripts:
 
 The tool ranks models using a **Weighted Min-Max Cost Function**. Lower scores are better.
 
-$$ Cost = \alpha \cdot \text{Norm}(Size) + \beta \cdot (1 - \text{Norm}(Accuracy)) + \gamma \cdot \text{Norm}(Latency) $$
+![Ranking Equation](https://latex.codecogs.com/svg.latex?\text{Cost}=\alpha\cdot\text{Norm}(\text{Size})+\beta\cdot(1-\text{Norm}(\text{Accuracy}))+\gamma\cdot\text{Norm}(\text{Latency}))
 
 * **Alpha ($\alpha$):** Weight for File Size.
 * **Beta ($\beta$):** Weight for Accuracy.

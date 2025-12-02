@@ -1,4 +1,7 @@
-# ⚡ EdgeOpt: Model Deployment Optimizer
+import os
+
+# --- CONTENT FOR README.MD ---
+readme_text = r"""# ⚡ EdgeOpt: Model Deployment Optimizer
 
 **EdgeOpt** is a decision-support tool designed for Machine Learning Engineers deploying models to resource-constrained edge devices (IoT, Mobile, Embedded). It automatically profiles deep learning models, applies industry-standard optimization techniques, and ranks the results based on user-defined priorities for **Accuracy**, **Latency**, and **Size**.
 
@@ -145,3 +148,14 @@ We faced compatibility issues between Keras 3.x files and our stable TensorFlow 
 The brief required "no cloud API dependencies."
 * **Implementation:** All processing uses the local CPU via `tensorflow` and `tensorflow-model-optimization`.
 * **Benefit:** This allows the tool to run on secure, air-gapped machines often found in industrial edge deployment scenarios.
+"""
+
+# --- WRITE FILES ---
+print("📄 Generating documentation...")
+
+# Write README.md
+with open("README.md", "w", encoding="utf-8") as f:
+    f.write(readme_text)
+print("✅ Created README.md")
+
+print("🎉 Documentation complete!")

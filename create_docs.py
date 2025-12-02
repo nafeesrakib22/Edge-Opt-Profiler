@@ -5,6 +5,16 @@ readme_text = r"""# ⚡ EdgeOpt: Model Deployment Optimizer
 
 **EdgeOpt** is a decision-support tool designed for Machine Learning Engineers deploying models to resource-constrained edge devices (IoT, Mobile, Embedded). It automatically profiles deep learning models, applies industry-standard optimization techniques, and ranks the results based on user-defined priorities for **Accuracy**, **Latency**, and **Size**.
 
+<p align="center">
+  <br>
+  <!-- REPLACE THIS PATH WITH YOUR ACTUAL GIF/IMAGE PATH -->
+  <img src="assets/EdgeOpt Demo.gif" alt="EdgeOpt Tool Demo" width="800">
+  <br>
+  <em>Real-time optimization of MobileNetV2 showing 4x size reduction with minimal accuracy loss.</em>
+  <br>
+</p>
+
+
 ## 🚀 Key Features
 
 * **Universal Ingestion:** Seamlessly handles `.h5` (Keras) and `.zip` (TensorFlow SavedModel) formats.
@@ -61,6 +71,9 @@ You can use your own model or generate a demo model using the included scripts:
 * **MobileNetV2 (Vision):** Run `python generate_mobilenet.py`
 * **ResNet50 (Complex Vision):** Run `python generate_resnet_sponge.py`
 * **MLP (Tabular):** Run `python generate_tabular_demo.py`
+
+**NOTE:** The repository comes with a pre-generated `demo_mobilenet` folder containing a trained model and validation data, so you can test the tool immediately without running any generation scripts!
+
 
 ### 2. In the App
 1.  **Upload Model:** Select the `.h5` file from the sidebar.

@@ -8,11 +8,14 @@ Ignore Python cache files
 pycache/
 *.pyc
 
-Ignore large generated data folders (Users should run generate scripts instead)
+Ignore utility scripts (Not part of the app)
+
+create_docs.py
+
+Ignore large generated data folders
 
 demo_files/
 demo_large/
-demo_mobilenet/
 demo_mnist/
 demo_resnet/
 demo_tabular/

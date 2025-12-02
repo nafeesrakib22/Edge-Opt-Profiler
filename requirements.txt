@@ -3,3 +3,4 @@ numpy<2.0
 pandas
 streamlit
 tensorflow-model-optimization==0.7.5
+opencv-python<4.10

@@ -19,6 +19,7 @@ demo_large/
 demo_mnist/
 demo_resnet/
 demo_tabular/
+demo_real_mlp/
 inputs/
 outputs/
 

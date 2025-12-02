@@ -1,4 +1,4 @@
-Ignore the virtual environment (Libraries)
+# Ignore the virtual environment (Libraries)
 
 venv/
 .env
@@ -8,11 +8,11 @@ Ignore Python cache files
 pycache/
 *.pyc
 
-Ignore utility scripts (Not part of the app)
+# Ignore utility scripts (Not part of the app)
 
 create_docs.py
 
-Ignore large generated data folders
+# Ignore large generated data folders
 
 demo_files/
 demo_large/
@@ -23,6 +23,6 @@ demo_real_mlp/
 inputs/
 outputs/
 
-Ignore OS specific files
+# Ignore OS specific files
 
 .DS_Store

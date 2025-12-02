@@ -7,10 +7,9 @@ readme_text = r"""# ⚡ EdgeOpt: Model Deployment Optimizer
 
 <p align="center">
   <br>
-  <!-- REPLACE THIS PATH WITH YOUR ACTUAL GIF/IMAGE PATH -->
   <img src="assets/EdgeOpt Demo.gif" alt="EdgeOpt Tool Demo" width="800">
   <br>
-  <em>Real-time optimization of MobileNetV2 showing 4x size reduction with minimal accuracy loss.</em>
+  <em>Real-time optimization of MobileNetV2 showing upto 4x size reduction with minimal accuracy loss accross the chosen optimization techniques.</em>
   <br>
 </p>
 

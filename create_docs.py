@@ -31,7 +31,7 @@ To run this project, you need **Python 3.10 or 3.11**.
 
 ### 1. Clone the Repository
 ```bash
-git clone [https://github.com/YOUR_USERNAME/EdgeOpt-Profiler.git](https://github.com/YOUR_USERNAME/EdgeOpt-Profiler.git)
+git clone [https://github.com/nafeesrakib22/Edge-Opt-Profiler.git](https://github.com/nafeesrakib22/Edge-Opt-Profiler.git)
 cd EdgeOpt-Profiler
 ```
 

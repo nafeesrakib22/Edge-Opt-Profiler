@@ -110,7 +110,7 @@ You can use your own model or generate a demo model using the included scripts:
 
 The tool ranks models using a **Weighted Min-Max Cost Function**. Lower scores are better.
 
-![Ranking Equation](https://latex.codecogs.com/svg.latex?\text{Cost}=\alpha\cdot\text{Norm}(\text{Size})+\beta\cdot(1-\text{Norm}(\text{Accuracy}))+\gamma\cdot\text{Norm}(\text{Latency}))
+$$ Cost = \alpha \cdot \text{Norm}(Size) + \beta \cdot (1 - \text{Norm}(Accuracy)) + \gamma \cdot \text{Norm}(Latency) $$
 
 * **Alpha ($\alpha$):** Weight for File Size.
 * **Beta ($\beta$):** Weight for Accuracy.

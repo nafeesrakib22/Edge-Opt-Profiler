@@ -2,6 +2,13 @@
 
 **EdgeOpt** is a decision-support tool designed for Machine Learning Engineers deploying models to resource-constrained edge devices (IoT, Mobile, Embedded). It automatically profiles deep learning models, applies industry-standard optimization techniques, and ranks the results based on user-defined priorities for **Accuracy**, **Latency**, and **Size**.
 
+<p align="center">
+  <br>
+  <img src="assets/EdgeOpt Demo.gif" alt="EdgeOpt Tool Demo" width="1080">
+  <br>
+  <em>Real-time optimization of MobileNetV2 using multiple optimization methods showing upto 4x size reduction with minimal accuracy loss.</em>
+  <br>
+</p>
 ## 🚀 Key Features
 
 * **Universal Ingestion:** Seamlessly handles `.h5` (Keras) and `.zip` (TensorFlow SavedModel) formats.

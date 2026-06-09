@@ -1,28 +1,46 @@
-# Ignore the virtual environment (Libraries)
+# Python caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.coverage
+htmlcov/
 
+# Virtual environments
 venv/
+venb/
+.venv/
+env/
+ENV/
+*_env/
+*venv/
+
+# Environment and local config
 .env
+.env.*
+.streamlit/
 
-Ignore Python cache files
+# Runtime/generated app data
+inputs/
+outputs/
+logs/
+*.tflite
+*.log
 
-pycache/
-*.pyc
-
-# Ignore utility scripts (Not part of the app)
-
-create_docs.py
-
-# Ignore large generated data folders
-
+# Generated demo datasets not intended for source control
+# Keep demo_mobilenet/ tracked because it is the lightweight bundled quick-start demo.
 demo_files/
 demo_large/
 demo_mnist/
 demo_resnet/
 demo_tabular/
 demo_real_mlp/
-inputs/
-outputs/
 
-# Ignore OS specific files
+# Local utility/doc generation artifacts
+create_docs.py
 
+# OS/IDE files
 .DS_Store
+Thumbs.db
+.vscode/
+.idea/

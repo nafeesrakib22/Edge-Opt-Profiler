@@ -6,7 +6,7 @@
   <br>
   <img src="assets/EdgeOpt Demo.gif" alt="EdgeOpt Tool Demo" width="1080">
   <br>
-  <em>Real-time optimization of MobileNetV2 using multiple optimization methods showing upto 4x size reduction with minimal accuracy loss.</em>
+  <em>Real-time optimization of MobileNetV2 using multiple optimization methods showing up to 4x size reduction with minimal accuracy loss.</em>
   <br>
 </p>
 ## 🚀 Key Features
@@ -106,6 +106,17 @@ You can use your own model or generate a demo model using the included scripts:
 | **Float16 (FP16)** | Converts weights to 16-bit floating point. | **Best for GPU:** Reduces size by 2x while maintaining near-perfect accuracy. Ideal for mobile GPUs. |
 | **Pruning** | Removes 30-50% of the lowest-magnitude weights and fine-tunes the model. | **Best for Efficiency:** Demonstrates how removing redundancy can sometimes *improve* accuracy (Regularization effect). |
 
+
+## 📌 Sample Results
+
+The included MobileNetV2 demo is designed to produce a comparison table like this after running the optimization pipeline. Exact latency and accuracy vary by CPU and validation data, but the relative trade-offs are what the decision engine is built to expose.
+
+| Variant | Size Impact | Accuracy Behavior | Best Use Case |
+| :--- | :--- | :--- | :--- |
+| Baseline FP32 | 1.0x reference size | Reference accuracy | Quality baseline before optimization |
+| Dynamic INT8 | Up to ~4x smaller | Usually minimal drop | CPU-focused edge deployment with tight storage limits |
+| Float16 FP16 | Up to ~2x smaller | Usually near-baseline | Mobile/GPU-friendly deployment |
+| Pruning + TFLite | Sparse, compact model | Data-dependent; can recover after fine-tuning | Experiments where model redundancy can be removed safely |
 ## 🏆 Ranking Methodology
 
 The tool ranks models using a **Weighted Min-Max Cost Function**. Lower scores are better.
